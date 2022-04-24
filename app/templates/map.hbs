@@ -1,0 +1,30 @@
+<div class="map-app-container">
+  <fieldset>
+    <legend>Overlays:</legend>
+      {{#each this.model as |overlay|}}
+        <div>
+          <input
+            type="checkbox"
+            id={{overlay.name}}
+            name={{overlay.name}}
+            {{on "input" (fn this.toggleOverlay overlay)}}>
+          <label for={{overlay.name}}>
+            {{overlay.name}}
+          </label>
+        </div>
+    {{/each}}
+  </fieldset>
+
+  <div class="map-container">
+    <LeafletMap
+      @center={{array 0 0}}
+      @crs={{this.crs}}
+      @zoom={{4}}
+      @onLoad={{this.storeMap}}
+    as |layers|>
+
+      <layers.iiif-tile @url="http://localhost:8182/iiif/3/base.tif/info.json"/>
+
+    </LeafletMap>
+  </div>
+</div>
