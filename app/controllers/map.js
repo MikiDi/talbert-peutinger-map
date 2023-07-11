@@ -17,7 +17,7 @@ export default class MapController extends Controller {
     const response = await fetch(overlay.svgPath);
     const svgContent = await response.text();
 
-    const svgElementBounds = [
+    const svgElementBounds = [ // TODO: obtained empirically
       [-387.6, 0],
       [320, 766],
     ];
@@ -27,7 +27,7 @@ export default class MapController extends Controller {
     div.innerHTML = svgContent.trim();
     const svgElement = div.firstElementChild;
 
-    svgElement.setAttribute('viewBox', '0 0 681.13281 60.163372');
+    svgElement.setAttribute('viewBox', '0 0 681.13281 60.163372'); // SVG size
     return L.svgOverlay(svgElement, svgElementBounds);
   }
 
