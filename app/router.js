@@ -1,5 +1,5 @@
 import EmberRouter from '@ember/routing/router';
-import config from 'peutinger-map-a/config/environment';
+import config from 'talbert-peutinger-map/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;

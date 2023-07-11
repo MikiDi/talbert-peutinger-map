@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'peutinger-map-a',
+    modulePrefix: 'talbert-peutinger-map',
     environment,
     rootURL: '/',
     locationType: 'auto',
